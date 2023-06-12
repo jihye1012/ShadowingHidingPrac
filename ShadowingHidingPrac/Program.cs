@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.InteropServices.Expando;
 using System.Text;
 using System.Threading.Tasks;
-namespace ShadowingHidingPrac
+namespace ShadowingHidingPrac31
 {
     internal class Program
     {
@@ -54,8 +53,18 @@ namespace ShadowingHidingPrac
             {
                 Console.WriteLine("자식의 메서드");
             }
-            Expand All
-	@@ -48,6 +71,16 @@
+        }
+        public static int number = 10;
+        static void Main(string[] args)
+        {
+            int number = 20;
+            Console.WriteLine(number);
+            Child child = new Child();
+            Console.WriteLine(child.variable);
+            Parent p = child;
+            Console.WriteLine(p.variable);
+            child.Method();
+            p.Method();
 
             child.Method2();
             p.Method2();
@@ -66,9 +75,10 @@ namespace ShadowingHidingPrac
                 new Dog(), new Cat(), new Cat(), new Dog(),
                 new Dog(), new Cat(), new Dog(), new Dog(),
             };
-            foreach (var item in Animals) {
+            foreach (var item in Animals)
+            {
                 item.Eat();
             }
+        }
     }
-}
 }
