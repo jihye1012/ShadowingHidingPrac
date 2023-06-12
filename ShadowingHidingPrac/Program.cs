@@ -8,7 +8,6 @@ namespace ShadowingHidingPrac
 {
     internal class Program
     {
-
         class Parent
         {
             public int variable = 273;
@@ -16,9 +15,8 @@ namespace ShadowingHidingPrac
 
         class Child : Parent
         {
-            public string variable = "shadowing";
+            public new string variable = "shadowing";
         }
-
 
         public static int number = 10;
         static void Main(string[] args)
